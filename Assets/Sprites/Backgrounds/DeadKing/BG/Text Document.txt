@@ -1,0 +1,1 @@
+If you want to increase that to 1920 by 1080, multiply that by 800 
