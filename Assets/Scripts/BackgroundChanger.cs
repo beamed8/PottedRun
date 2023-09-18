@@ -152,8 +152,6 @@ public class BackgroundChanger : MonoBehaviour
             SetRandomSeason();
             previousSeason = currentSeason;
         }
-
-        HandleBGM();
     }
 
     // Update is called once per frame
@@ -167,10 +165,10 @@ public class BackgroundChanger : MonoBehaviour
 
     public void ChangeSeason(Season season)
     {
-        if (currentSeason != Season.DeadKing || currentSeason != Season.Bootoshi)
-        {
-            previousSeason = currentSeason;
-        }
+        // if (currentSeason != Season.DeadKing || currentSeason != Season.Bootoshi)
+        // {
+        //     previousSeason = currentSeason;
+        // }
         currentSeason = season;
 
 
@@ -786,7 +784,7 @@ public class BackgroundChanger : MonoBehaviour
             deadkingBackgrounds.SetActive(false);
             bootoshiBackgrounds.SetActive(false);
             ChangeSeason(previousSeason);
-            // SetObstacles(currentSeason);
+            // SetObstacles(previousSeason);
         }
     }
 }

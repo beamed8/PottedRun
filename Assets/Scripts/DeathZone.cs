@@ -18,5 +18,11 @@ public class DeathZone : MonoBehaviour
             Debug.Log("Player died!");
             PlayerHealth.instance.Death(false);
         }
+
+        if (other.CompareTag("Opponent"))
+        {
+            Debug.Log("Opponent died!");
+            OpponentHealth.instance.Death(false);
+        }
     }
 }

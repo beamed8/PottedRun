@@ -27,15 +27,6 @@ public class SceneHandler : MonoBehaviour
     void Start()
     {
         fade = GetComponentInChildren<Animator>();
-        if (firstLoad)
-        {
-            firstLoad = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        else
-        {
-            SetMusic();
-        }
     }
 
     private void Update()

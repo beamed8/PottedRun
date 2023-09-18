@@ -40,7 +40,7 @@ public class LevelManager : MonoBehaviour
         tryAgainButton.interactable = false;
         submitHighscoreButton.interactable = false;
         leaderboard.interactable = false;
-        clickToStart.gameObject.SetActive(true);
+        // clickToStart.gameObject.SetActive(true);
         gameOver.gameObject.SetActive(false);
 
         SoundManager.instance.musicSource.volume = SoundManager.instance.defaultMusicVolume / 2;

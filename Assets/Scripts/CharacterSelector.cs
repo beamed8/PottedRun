@@ -149,6 +149,10 @@ public class CharacterSelector : MonoBehaviour
         characterNameSelectScreen.text = fffCharacterName;
         characterNameGameScreen.text = fffCharacterName;
 
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(fffAvatar, fffCharacterName);
+        //MULTIPLAYER END
+
         if (isFFFSpecialBackground)
         {
             // BackgroundChanger.instance.DeadKingSetting();
@@ -171,6 +175,10 @@ public class CharacterSelector : MonoBehaviour
         playerAvatar.sprite = hiddenAvatar;
         characterNameSelectScreen.text = hiddenCharacterName;
         characterNameGameScreen.text = hiddenCharacterName;
+
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(hiddenAvatar, hiddenCharacterName);
+        //MULTIPLAYER END
 
         if (isHiddenSpecialBackground)
         {
@@ -195,6 +203,10 @@ public class CharacterSelector : MonoBehaviour
         characterNameSelectScreen.text = potCharacterName;
         characterNameGameScreen.text = potCharacterName;
 
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(potAvatar, potCharacterName);
+        //MULTIPLAYER END
+
         if (isPotSpecialBackground)
         {
             // BackgroundChanger.instance.DeadKingSetting();
@@ -217,6 +229,10 @@ public class CharacterSelector : MonoBehaviour
         playerAvatar.sprite = pharaohAvatar;
         characterNameSelectScreen.text = pharaohCharacterName;
         characterNameGameScreen.text = pharaohCharacterName;
+
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(pharaohAvatar, pharaohCharacterName);
+        //MULTIPLAYER END
 
         if (isHiddenSpecialBackground)
         {
@@ -241,6 +257,10 @@ public class CharacterSelector : MonoBehaviour
         characterNameSelectScreen.text = bvdcatCharacterName;
         characterNameGameScreen.text = bvdcatCharacterName;
 
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(bvdcatAvatar, bvdcatCharacterName);
+        //MULTIPLAYER END
+
         if (isBvdcatSpecialBackground)
         {
             // BackgroundChanger.instance.DeadKingSetting();
@@ -263,6 +283,10 @@ public class CharacterSelector : MonoBehaviour
         playerAvatar.sprite = ghostkidAvatar;
         characterNameSelectScreen.text = ghostkidCharacterName;
         characterNameGameScreen.text = ghostkidCharacterName;
+
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(ghostkidAvatar, ghostkidCharacterName);
+        //MULTIPLAYER END
 
         if (isGhostkidSpecialBackground)
         {
@@ -287,6 +311,10 @@ public class CharacterSelector : MonoBehaviour
         characterNameSelectScreen.text = immortalCharacterName;
         characterNameGameScreen.text = immortalCharacterName;
 
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(immortalAvatar, immortalCharacterName);
+        //MULTIPLAYER END
+
         if (isImmortalSpecialBackground)
         {
             // BackgroundChanger.instance.DeadKingSetting();
@@ -309,6 +337,10 @@ public class CharacterSelector : MonoBehaviour
         playerAvatar.sprite = nekozumaAvatar;
         characterNameSelectScreen.text = nekozumaCharacterName;
         characterNameGameScreen.text = nekozumaCharacterName;
+
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(nekozumaAvatar, nekozumaCharacterName);
+        //MULTIPLAYER END
 
         if (isNekozumaSpecialBackground)
         {
@@ -333,6 +365,10 @@ public class CharacterSelector : MonoBehaviour
         characterNameSelectScreen.text = pixeldudeCharacterName;
         characterNameGameScreen.text = pixeldudeCharacterName;
 
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(pixeldudeAvatar, pixeldudeCharacterName);
+        //MULTIPLAYER END
+
         if (isPixeldudeSpecialBackground)
         {
             // BackgroundChanger.instance.DeadKingSetting();
@@ -355,6 +391,10 @@ public class CharacterSelector : MonoBehaviour
         playerAvatar.sprite = btcmachineAvatar;
         characterNameSelectScreen.text = btcmachineCharacterName;
         characterNameGameScreen.text = btcmachineCharacterName;
+
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(btcmachineAvatar, btcmachineCharacterName);
+        //MULTIPLAYER END
 
         if (isBtcmachineSpecialBackground)
         {
@@ -379,6 +419,10 @@ public class CharacterSelector : MonoBehaviour
         characterNameSelectScreen.text = ordinalrabbitCharacterName;
         characterNameGameScreen.text = ordinalrabbitCharacterName;
 
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(ordinalrabbitAvatar, ordinalrabbitCharacterName);
+        //MULTIPLAYER END
+
         if (isOrdinalrabbitSpecialBackground)
         {
             // BackgroundChanger.instance.DeadKingSetting();
@@ -401,6 +445,10 @@ public class CharacterSelector : MonoBehaviour
         playerAvatar.sprite = satoshishellzAvatar;
         characterNameSelectScreen.text = satoshishellzCharacterName;
         characterNameGameScreen.text = satoshishellzCharacterName;
+
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(satoshishellzAvatar, satoshishellzCharacterName);
+        //MULTIPLAYER END
 
         if (isSatoshishellzSpecialBackground)
         {
@@ -425,6 +473,10 @@ public class CharacterSelector : MonoBehaviour
         characterNameSelectScreen.text = dogecapitalCharacterName;
         characterNameGameScreen.text = dogecapitalCharacterName;
 
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(dogecapitalzAvatar, dogecapitalCharacterName);
+        //MULTIPLAYER END
+
         if (isDogecapitalSpecialBackground)
         {
             // BackgroundChanger.instance.DeadKingSetting();
@@ -448,6 +500,10 @@ public class CharacterSelector : MonoBehaviour
         characterNameSelectScreen.text = deadkingCharacterName;
         characterNameGameScreen.text = deadkingCharacterName;
 
+        //MULTIPLAYER START
+        MultiplayerSequence.instance.SetPlayerCharacter(deadkingAvatar, deadkingCharacterName);
+        //MULTIPLAYER END
+
         if (isDeadkingSpecialBackground)
         {
             BackgroundChanger.instance.DeadKingSetting();
@@ -470,6 +526,10 @@ public class CharacterSelector : MonoBehaviour
         playerAvatar.sprite = bootoshiAvatar;
         characterNameSelectScreen.text = bootoshiCharacterName;
         characterNameGameScreen.text = bootoshiCharacterName;
+
+        //MULTIPLAYER START
+        // MultiplayerSequence.instance.SetPlayerCharacter(bootoshiAvatar, bootoshiCharacterName);
+        //MULTIPLAYER END
 
         if (isBootoshiSpecialBackground)
         {

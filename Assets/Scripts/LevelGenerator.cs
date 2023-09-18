@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     private const float playerDistance = 10f;
+    private bool canSpawnParts = false;
 
     [SerializeField] private Transform levelPart_Start;
     [SerializeField] private Transform testPlatform;
@@ -23,23 +24,51 @@ public class LevelGenerator : MonoBehaviour
     public int nightmare2 = 55;
     public int nightmare3 = 65;
 
-    private enum Difficulty
-    {
-        Easy,
-        Medium,
-        Hard,
-        Extreme,
-        Nigthmare1,
-        Nigthmare2,
-        Nigthmare3,
-    }
-
+    [SerializeField] private string seed = "1234567890";
+    [SerializeField] private bool useSeed = true;
+    private int levelPartsSpawned;
     private Vector3 lastEndPosition;
-
-    public int levelPartsSpawned;
+    private int levelPartSeedOffset;
 
     private void Awake()
     {
+        // lastEndPosition = levelPart_Start.Find("EndPosition").position;
+
+        // if (testPlatform != null)
+        // {
+        //     Debug.Log("Test platform.");
+        // }
+
+        // int startingSpawnLevelParts = 5;
+        // levelPartSeedOffset = 0;
+        // for (int i = 0; i < startingSpawnLevelParts; i++)
+        // {
+        //     SpawnLevelPart();
+        // }
+
+        SetSeedAndStart();
+    }
+
+    private void Update()
+    {
+        if (canSpawnParts)
+        {
+            if (Vector3.Distance(player.GetPosition(), lastEndPosition) < playerDistance)
+            {
+                SpawnLevelPart();
+            }
+        }
+    }
+
+    public void SetSeedAndStart()
+    {
+        SetRandomSeed();
+        StartSpawningParts();
+    }
+
+    public void StartSpawningParts()
+    {
+        canSpawnParts = true;
         lastEndPosition = levelPart_Start.Find("EndPosition").position;
 
         if (testPlatform != null)
@@ -48,18 +77,21 @@ public class LevelGenerator : MonoBehaviour
         }
 
         int startingSpawnLevelParts = 5;
+        levelPartSeedOffset = 0;
         for (int i = 0; i < startingSpawnLevelParts; i++)
         {
             SpawnLevelPart();
         }
     }
 
-    private void Update()
+    private void SetRandomSeed()
     {
-        if (Vector3.Distance(player.GetPosition(), lastEndPosition) < playerDistance)
-        {
-            SpawnLevelPart();
-        }
+        seed = Random.Range(0, 99999999).ToString();
+    }
+
+    public void SetSeed(string receivedSeed)
+    {
+        seed = receivedSeed;
     }
 
     private void SpawnLevelPart()
@@ -79,7 +111,8 @@ public class LevelGenerator : MonoBehaviour
 
         SetPlayerSpeed();
 
-        Transform chosenLevelPart = difficultyLevelPartList[Random.Range(0, difficultyLevelPartList.Count)];
+        int levelPartIndex = CustomRandomRange(0, difficultyLevelPartList.Count);
+        Transform chosenLevelPart = difficultyLevelPartList[levelPartIndex];
 
         if (testPlatform != null)
         {
@@ -90,6 +123,7 @@ public class LevelGenerator : MonoBehaviour
         lastEndPosition = lastLevelPartTransform.Find("EndPosition").position;
 
         levelPartsSpawned++;
+        levelPartSeedOffset += levelPartIndex; // Increase the seed offset for the next level part
 
         BackgroundChanger.instance.SetCurrentPlatforms();
     }
@@ -124,5 +158,26 @@ public class LevelGenerator : MonoBehaviour
             case Difficulty.Nigthmare2: player.moveSpeed = 4.7f; break;
             case Difficulty.Nigthmare3: player.moveSpeed = 5.4f; break;
         }
+    }
+
+    private int CustomRandomRange(int min, int max)
+    {
+        if (useSeed)
+        {
+            int offsetSeed = (seed + levelPartsSpawned.ToString() + levelPartSeedOffset.ToString()).GetHashCode();
+            Random.InitState(offsetSeed);
+        }
+        return Random.Range(min, max);
+    }
+
+    private enum Difficulty
+    {
+        Easy,
+        Medium,
+        Hard,
+        Extreme,
+        Nigthmare1,
+        Nigthmare2,
+        Nigthmare3,
     }
 }

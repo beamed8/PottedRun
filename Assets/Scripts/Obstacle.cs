@@ -10,5 +10,10 @@ public class Obstacle : MonoBehaviour
         {
             PlayerHealth.instance.Hit();
         }
+
+        if (other.CompareTag("Opponent"))
+        {
+            OpponentHealth.instance.Hit();
+        }
     }
 }

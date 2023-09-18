@@ -123,6 +123,8 @@ public class PlayerMovement : MonoBehaviour
         PlayParticleEffect(dustParticles);
         animator.SetTrigger("jump");
         SoundManager.instance.PlayRandomFromList(SoundManager.instance.jumpingSounds);
+
+        // OpponentAI.instance.PlayerJumped();
     }
 
     private void PlayParticleEffect(ParticleSystem particle)
